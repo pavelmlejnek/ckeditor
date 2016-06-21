@@ -8,7 +8,7 @@ use Tester\Assert;
 require_once __DIR__ . '/TestCase.php';
 require_once __DIR__ . '/../bootstrap.php';
 
-class ExtensionTest extends TestCase {
+class ConfigurationsTest extends TestCase {
 
     /**
      * @var ConfigurationsManager
@@ -115,4 +115,4 @@ class ExtensionTest extends TestCase {
         );
     }
 }
-\run(new ExtensionTest());
+\run(new ConfigurationsTest());
