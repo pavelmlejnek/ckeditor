@@ -31,11 +31,11 @@ class ConfigurationsManager
      * @return boolean
      */
     public function hasDefaultConfiguration() {
-        if ($this->defaultConfiguration === null) {
-            return false;
+        if ($this->defaultConfiguration === NULL) {
+            return FALSE;
         }
 
-        return true;
+        return TRUE;
     }
 
     /**

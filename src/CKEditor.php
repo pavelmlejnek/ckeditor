@@ -58,7 +58,7 @@ class CKEditor
      * @return CKEditorControl
      */
     public function createControl($label, array $specificConfiguration = []) {
-        if (!empty($specificConfiguration && $this->configurationsManager->getDefaultConfiguration() !== null)) {
+        if (!empty($specificConfiguration && $this->configurationsManager->getDefaultConfiguration() !== NULL)) {
             $configuration = $this->configurationsManager->mergeConfiguration(
                 $this->configurationsManager->getDefaultConfiguration(),
                 $specificConfiguration
@@ -69,7 +69,7 @@ class CKEditor
                 $specificConfiguration
             );
             unset($configuration['useConfiguration']);
-        } elseif (empty($specificConfiguration) && $this->configurationsManager->getDefaultConfiguration() != null) {
+        } elseif (empty($specificConfiguration) && $this->configurationsManager->getDefaultConfiguration() != NULL) {
             $configuration = $this->configurationsManager->getConfiguration($this->configurationsManager->getDefaultConfiguration());
         }  else {
             $configuration = $specificConfiguration;

@@ -14,10 +14,10 @@ use Nette\Utils\Validators;
 class CKEditorExtension extends CompilerExtension
 {
     private $defaults = [
-        'enabled' => true,
-        'ckeditor_path' => null,
-        'autoload' => true,
-        'default_configuration' => null,
+        'enabled' => TRUE,
+        'ckeditor_path' => NULL,
+        'autoload' => TRUE,
+        'default_configuration' => NULL,
         'plugins' => [],
         'configurations' => []
     ];
@@ -27,7 +27,7 @@ class CKEditorExtension extends CompilerExtension
         $builder = $this->getContainerBuilder();
         $config = $this->validateConfig($this->defaults);
 
-        if ($config['enabled'] !== false) {
+        if ($config['enabled'] !== FALSE) {
             Validators::assertField($config, 'enabled', 'bool');
             Validators::assertField($config, 'autoload', 'bool');
             Validators::assertField($config, 'ckeditor_path', 'string');
