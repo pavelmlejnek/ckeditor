@@ -1,0 +1,14 @@
+session:
+    autoStart: false
+
+application:
+	mapping:
+		*: CKEditor\Tests\*Presenter
+
+routing:
+    routes:
+            index.php: Test:default
+            '<presenter>/<action>[/<id>]': Test:default
+
+extensions:
+	ckeditor: \CKEditor\DI\CKEditorExtension

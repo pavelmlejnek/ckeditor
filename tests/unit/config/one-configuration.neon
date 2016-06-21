@@ -1,0 +1,4 @@
+ckeditor:
+    configurations:
+        test-configuration:
+            option: 'fromConfigNeon'

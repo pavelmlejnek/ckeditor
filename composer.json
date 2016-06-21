@@ -1,0 +1,30 @@
+{
+  "name": "pavelm/nette-ckeditor",
+  "description": "description_text",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "author's name",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "nette/application": "~2.4",
+    "nette/di": "~2.4",
+    "nette/utils": "~2.4",
+    "nette/bootstrap": "~2.4",
+    "nette/robot-loader": "~2.4",
+    "nette/forms": "~2.4",
+    "latte/latte": "~2.4"
+  },
+  "require-dev": {
+    "nette/tester": "~1.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "CKEditor\\": "src/"
+    }
+  }
+}
