@@ -20,6 +20,12 @@ class ExtensionTest extends TestCase {
         Assert::true($container->getByType('\CKEditor\Renderer\FormRenderer') instanceof FormRenderer);
     }
     
-    
+    public function testConfiguration() {
+        Assert::exception(
+            function() { $this->createContainer(['path-not-set.neon']); },
+            '\Nette\Utils\AssertionException',
+            'The item \'ckeditor_path\' in array expects to be string, NULL given.'
+        );
+    }
 }
 \run(new ExtensionTest());
