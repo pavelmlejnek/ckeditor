@@ -15,7 +15,7 @@ class CKEditorExtension extends CompilerExtension
 {
     private $defaults = [
         'enabled' => true,
-        'ckeditor_path' => 'js/ckeditor',
+        'ckeditor_path' => null,
         'autoload' => true,
         'default_configuration' => null,
         'plugins' => [],
@@ -30,6 +30,7 @@ class CKEditorExtension extends CompilerExtension
         if ($config['enabled'] !== false) {
             Validators::assertField($config, 'enabled', 'bool');
             Validators::assertField($config, 'autoload', 'bool');
+            Validators::assertField($config, 'ckeditor_path', 'string');
 
             $configurationsManager = $builder->addDefinition($this->prefix('configurationsManager'))
                 ->setClass('CKEditor\Model\ConfigurationsManager');
@@ -43,7 +44,6 @@ class CKEditorExtension extends CompilerExtension
                     $configurationsManager->addSetup('setDefaultConfiguration', [$config['default_configuration']]);
                 }
             }
-
             $builder->addDefinition($this->prefix('formRenderer'))
                 ->setClass('CKEditor\Renderer\FormRenderer')
                 ->addSetup('setCKEditorPath', [$this->config['ckeditor_path']]);
