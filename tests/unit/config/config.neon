@@ -10,5 +10,9 @@ routing:
             index.php: Test:default
             '<presenter>/<action>[/<id>]': Test:default
 
+ckeditor:
+    ckeditor_path: js/ckeditor
+
+
 extensions:
 	ckeditor: \CKEditor\DI\CKEditorExtension
