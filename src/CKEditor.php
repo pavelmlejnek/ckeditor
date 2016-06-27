@@ -2,7 +2,6 @@
 
 namespace CKEditor;
 
-
 use CKEditor\Forms\Controls\CKEditorControl;
 use CKEditor\Model\ConfigurationsManager;
 use CKEditor\Renderer\FormRenderer;
@@ -15,47 +14,47 @@ class CKEditor
     private $configurationsManager;
 
     /**
-     * @var boolean
+     * @var bool
      */
     private $autoload;
 
     /**
-     * @var FormRenderer
+     * @var \CKEditor\Renderer\FormRenderer
      */
     private $formRenderer;
 
     /**
-     * @param ConfigurationsManager $configurationsManager
+     * @param \CKEditor\Model\ConfigurationsManager $configurationsManager
      */
     public function setConfigurationsManager(ConfigurationsManager $configurationsManager) {
         $this->configurationsManager = $configurationsManager;
     }
 
     /**
-     * @param FormRenderer $formRenderer
+     * @param \CKEditor\Renderer\FormRenderer $formRenderer
      */
     public function setFormRenderer(FormRenderer $formRenderer) {
         $this->formRenderer = $formRenderer;
     }
 
     /**
-     * @param $autoload
+     * @param bool $autoload
      */
     public function setAutoload($autoload) {
         $this->autoload = $autoload;
     }
 
     /**
-     * @return mixed
+     * @return bool
      */
     public function getAutoload() {
         return $this->autoload;
     }
 
     /**
-     * @param $label
+     * @param string|null $label
      * @param array $specificConfiguration
-     * @return CKEditorControl
+     * @return \CKEditor\Forms\Controls\CKEditorControl
      */
     public function createControl($label, array $specificConfiguration = []) {
         if (!empty($specificConfiguration && $this->configurationsManager->getDefaultConfiguration() !== NULL)) {

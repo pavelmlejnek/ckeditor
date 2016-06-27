@@ -25,7 +25,7 @@ class CKEditorControl extends \Nette\Forms\Controls\TextArea
      * CKEditor constructor.
      * @param null $label
      * @param FormRenderer $formRenderer
-     * @param $configurationsManager
+     * @param 
      */
     public function __construct($label = NULL, FormRenderer $formRenderer, $configuration) {
         parent::__construct($label);

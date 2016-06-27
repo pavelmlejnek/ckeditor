@@ -18,6 +18,7 @@ class ConfigurationsManager
 
     /**
      * @param string $name
+     * @throws \InvalidArgumentException when configuration with given name does not exists.
      */
     public function setDefaultConfiguration($name) {
         if (!$this->hasConfiguration($name)) {
@@ -28,7 +29,7 @@ class ConfigurationsManager
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function hasDefaultConfiguration() {
         if ($this->defaultConfiguration === NULL) {
@@ -47,6 +48,7 @@ class ConfigurationsManager
 
     /**
      * @param string $name
+     * @throws \InvalidArgumentException when blank configuration name is provided.
      * @param array $values
      */
     public function addConfiguration($name, $values = []) {
@@ -59,7 +61,8 @@ class ConfigurationsManager
 
     /**
      * @param $name
-     * @return mixed
+     * @throws \InvalidArgumentException when configuration with given name does not exists.
+     * @return array
      */
     public function getConfiguration($name) {
         if (!$this->hasConfiguration($name)) {
@@ -71,14 +74,14 @@ class ConfigurationsManager
 
     /**
      * @param string $name
-     * @return boolean
+     * @return bool
      */
     public function hasConfiguration($name) {
         return isset($this->configurations[$name]);
     }
     
     /**
-     * @return boolean
+     * @return bool
      */
     public function hasConfigurations() {
         return !empty($this->configurations);
@@ -86,7 +89,9 @@ class ConfigurationsManager
 
     /**
      * @param $name
+     * @throws \InvalidArgumentException when configuration with given name does not exists.
      * @param array $configuration
+     * @return array Merged configuration.
      */
     public function mergeConfiguration($name, array $configuration) {
         if (!$this->hasConfiguration($name)) {

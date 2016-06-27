@@ -13,6 +13,9 @@ use Nette\Utils\Validators;
 
 class CKEditorExtension extends CompilerExtension
 {
+    /**
+     * @var array
+     */
     private $defaults = [
         'enabled' => TRUE,
         'ckeditor_path' => NULL,
@@ -56,7 +59,9 @@ class CKEditorExtension extends CompilerExtension
         }
     }
 
-
+    /**
+     * @param Nette\PhpGenerator\ClassType $class
+     */
     public function afterCompile(Nette\PhpGenerator\ClassType $class)
     {
         $initialize = $class->getMethods()['initialize'];
